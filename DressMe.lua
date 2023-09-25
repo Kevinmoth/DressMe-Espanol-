@@ -1371,10 +1371,11 @@ do
     local btnClear = CreateFrame("Button", "$parentButtonClear", scrollFrame, "UIPanelButtonTemplate2")
     btnClear:SetSize(90, 20)
     btnClear:SetPoint("RIGHT", frame, "BOTTOMRIGHT", 0, -12)
-    btnClear:SetText("Clear")
+    btnClear:SetText("Limpiar")
     btnClear:SetScript("OnClick", function() PlaySound("gsTitleOptionOK") end)
     btnClear:Disable()
 
+	
     local listFrame = ns.CreateListFrame("$parentSavedLooks", nil, scrollFrame)
     listFrame:SetWidth(scrollFrame:GetWidth())
     listFrame:SetScript("OnShow", function(self)
@@ -1431,6 +1432,7 @@ do
         end
     end)
 
+	
     listFrame.onSelect = function(self)
         btnRemove:Enable()
         btnTryOn:Enable()
@@ -1485,7 +1487,7 @@ do
     end)
 end
 
----------------- CHARACTER MENU BUTTON ----------------
+---------------- Boton de menu de personaje ----------------
 
 local btnDressMe = CreateFrame("Button", "$parent"..addon.."DressMeButton", CharacterModelFrame, "UIPanelButtonTemplate2")
 btnDressMe:SetSize(80, 20)
@@ -1499,9 +1501,9 @@ btnDressMe:SetScript("OnClick", function(self)
     end
 end)
 
----------------- SETTINGS TAB ----------------
+---------------- ventana de configuraciones ----------------
 
-do  --------- email and github
+do  --------- Info+
     local email = mainFrame.tabs.settings:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     email:SetPoint("CENTER", mainFrame.stats, "CENTER", 10, 0)
     email:SetJustifyH("CENTER")
@@ -1510,7 +1512,7 @@ do  --------- email and github
 end
 
 
-do  --------- Preview Setup
+do  --------- previsualizacion
     local settingsTab = mainFrame.tabs.settings
 
     settingsTab.previewSetupMenu = CreateFrame("Frame", "$parentPreviewSetupDropDownMenu", settingsTab, "UIDropDownMenuTemplate")
@@ -1563,7 +1565,7 @@ do  --------- Preview Setup
 end
 
 
-do  --------- Character background
+do  --------- Fondos de personaje
     local settingsTab = mainFrame.tabs.settings
     local textures = mainFrame.dressingRoom.backgroundTextures
 
@@ -1697,7 +1699,7 @@ do  --------- Show/hide "DressMe" button
 end
 
 
-do  --------- Show shortcuts in tooltips
+do  --------- Configuracion de datos en tooltip
     local settingsTab = mainFrame.tabs.settings
     settingsTab.showShortcutsInTooltipCheckBox = CreateFrame("CheckButton", "$parentShowShortcutsInTooltipCheckBox", settingsTab, "ChatConfigCheckButtonTemplate")
     
@@ -1712,7 +1714,7 @@ do  --------- Show shortcuts in tooltips
 end
 
 
-do  --------- Hide hair on cloak preview
+do  --------- Esconder o mostrar cabello en la previsualizacion
     local settingsTab = mainFrame.tabs.settings
     settingsTab.hideHairOnCloakPreviewCheckBox = CreateFrame("CheckButton", "$parentHideHairOnCloakPreviewCheckBox", settingsTab, "ChatConfigCheckButtonTemplate")
 
@@ -1743,7 +1745,7 @@ do  --------- Hide hair and beard on chest preview
 end
 
 
-do  --------- Use server time in received appearances
+do  --------- Utilizar el horario del servidor o local
     local settingsTab = mainFrame.tabs.settings
     settingsTab.useServerTimeInReceivedAppearancesCheckBox = CreateFrame("CheckButton", "$parentUseServerTimeInReceivedAppearancesCheckBox", settingsTab, "ChatConfigCheckButtonTemplate")
     
@@ -1759,7 +1761,7 @@ do  --------- Use server time in received appearances
 end
 
 
-do  --------- Announce appearance receiving
+do  --------- Anuncio de transfi recibida 
     local settingsTab = mainFrame.tabs.settings
     settingsTab.announceAppearanceReceivingCheckBox = CreateFrame("CheckButton", "$parentAnnounceAppearanceReceivingCheckBox", settingsTab, "ChatConfigCheckButtonTemplate")
     
@@ -1775,7 +1777,7 @@ do  --------- Announce appearance receiving
 end
 
 
-do  --------- Ignore UI sclaing
+do  --------- Ignorar el escalado de interfaz
     local settingsTab = mainFrame.tabs.settings
     settingsTab.ignoreUIScalingCheckBox = CreateFrame("CheckButton", "$parentIgnoreUIScalingCheckBox", settingsTab, "ChatConfigCheckButtonTemplate")
     
@@ -1818,7 +1820,7 @@ end
 
 
 
-do  --------- Apply settings on addon loaded
+do  --------- Aplicar los cambios al iniciar el addon
     local settingsTab = mainFrame.tabs.settings
 
     local function applySettings(settings)
