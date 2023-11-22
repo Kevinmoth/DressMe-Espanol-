@@ -4,6 +4,7 @@ local addon, ns = ...
 local defaultWidth = 350
 local defaultHeight = 430
 
+
 -- SetLight(enabled, omni, dirX, dirY, dirZ, ambIntensity, ambR, ambG, ambB, dirIntensity, dirR, dirG, dirB)
 local defaultLight = {1, 0, 0, 1, 0, 1, 0.7, 0.7, 0.7, 1, 0.8, 0.8, 0.64}
 
