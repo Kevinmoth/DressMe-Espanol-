@@ -233,6 +233,7 @@ function ns.CreateDressingRoom(name, parent)
         if enable then dragDummy:Show() else dragDummy:Hide() end
     end
 
+    
     local originSetBackdrop = frame.SetBackdrop
     function frame:SetBackdrop(backdrop)
         originSetBackdrop(frame, backdrop)
