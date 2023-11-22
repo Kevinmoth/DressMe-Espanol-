@@ -48,6 +48,7 @@ local modelX = { -- male = 2, female = 3
     },
 }
 
+
 local modelZ = {
     min = {
         -- The Alliance
